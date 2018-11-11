@@ -48,9 +48,11 @@ Arguments en entrée:
 Sortie attendue:
   [{ Bordeaux: 12 }, { Lille: 12 }]
 
-*/
+  */
 
-function getStudentsPerCurriculum(campuses, curriculumName) {
-}
+  function getStudentsPerCurriculum(campuses, curriculumName) {
+   let arr = campuses.filter(camp => camp.curriculums.name == curriculumName ? camp.curriculums[0] : camp.curriculums[1]);
+   return arr.map(camp => camp.city === 'Bordeaux' ? {Bordeaux: camp.curriculums[0].numStudents}:{Lille: camp.curriculums[0].numStudents})
+ }
 
-module.exports = getStudentsPerCurriculum;
+ module.exports = getStudentsPerCurriculum;
