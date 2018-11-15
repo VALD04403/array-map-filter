@@ -43,13 +43,15 @@ En sortie: [
  */
 
 function getFoodCategories(foods) {
-
-  if (isVegetarian === false) {
-  return foods.map(str => `${str} is not suitable for vegetarians`);
+return foods.map(food => {
+	if (food.isVegetarian) {
+  return `${food.food} is suitable for vegetarians`;
 }
-else{
-  return foods.map(str => `${str} is suitable for vegetarians`);
+{
+  return `${food.food} is not suitable for vegetarians`;
 } 
+})
+  
 }
 
 
